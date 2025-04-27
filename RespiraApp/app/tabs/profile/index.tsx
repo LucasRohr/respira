@@ -1,21 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
+import { ProfilePage } from "@/pages";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#25292e",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-  },
-});
-
-export default function ProfilePage() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>This is the Profile screen</Text>
-    </View>
-  );
+export default function Profile() {
+  return <ProfilePage />;
 }

@@ -11,6 +11,10 @@ export default function TabsLayout() {
         tabBarInactiveBackgroundColor: COLORS.primary,
         tabBarActiveTintColor: COLORS.secondary,
         tabBarInactiveTintColor: COLORS.primaryOff,
+        tabBarStyle: {
+          paddingTop: 10,
+          backgroundColor: COLORS.primary,
+        },
       }}
     >
       <Tabs.Screen

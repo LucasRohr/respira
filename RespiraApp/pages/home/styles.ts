@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  text: {
-    color: COLORS.text,
+  map: {
+    width: "100%",
+    height: "100%",
   },
 });

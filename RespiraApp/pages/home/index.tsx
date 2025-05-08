@@ -1,39 +1,26 @@
-import { View, Text, Platform } from "react-native";
-import { AppleMaps, GoogleMaps } from "expo-maps";
-
+import { View } from "react-native";
+import MapView, { Marker } from "react-native-maps";
 import { styles } from "./styles";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 export const HomePage = () => {
-  const renderMap = useCallback(() => {
-    const isIOS = Platform.OS == "ios";
+  const [region, setRegion] = useState({
+    latitude: -30.027542,
+    longitude: -51.175467,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
 
-    if (isIOS) {
-      return (
-        <AppleMaps.View
-          style={{ width: "auto", height: "100%" }}
-          cameraPosition={{
-            coordinates: {
-              latitude: 51.509865,
-              longitude: -0.1275,
-            },
-            zoom: 1,
+  const renderMap = useCallback(() => {
+    return (
+      <MapView style={styles.map} region={region}>
+        <Marker
+          coordinate={{
+            latitude: -30.027542,
+            longitude: -51.175467,
           }}
         />
-      );
-    }
-
-    return (
-      <GoogleMaps.View
-        style={{ width: "auto", height: "100%" }}
-        cameraPosition={{
-          coordinates: {
-            latitude: 51.509865,
-            longitude: -0.1275,
-          },
-          zoom: 1,
-        }}
-      />
+      </MapView>
     );
   }, []);
 

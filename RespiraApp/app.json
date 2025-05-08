@@ -33,13 +33,6 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      [
-        "expo-maps",
-        {
-          "requestLocationPermission": "true",
-          "locationPermission": "Allow $(PRODUCT_NAME) to use your location"
-        }
-      ],
       "expo-font",
       "expo-web-browser"
     ],

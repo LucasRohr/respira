@@ -1,5 +1,5 @@
-import type { ApiAirQualityReport } from "../air-quality-report/api-air-quality-report";
-import type { ApiLocation } from "../location/api-location";
+import type { IAirQualityReport } from "../air-quality-report/air-quality-report";
+import type { ILocation } from "../location/location";
 
 // Will get by city name sent by the app on the home page load
 /*
@@ -9,7 +9,7 @@ import type { ApiLocation } from "../location/api-location";
 */
 
 export interface ICurrentLocationAirQuality {
-  location: ApiLocation;
-  airQualityReport: ApiAirQualityReport;
+  location: ILocation;
+  airQualityReport: IAirQualityReport;
   recommendations: string[];
 }

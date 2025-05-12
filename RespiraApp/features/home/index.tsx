@@ -36,7 +36,7 @@ export const HomePage = () => {
         />
       </MapView>
     );
-  }, []);
+  }, [region]);
 
   return <View style={styles.container}>{renderMap()}</View>;
 };

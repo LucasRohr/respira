@@ -5097,6 +5097,11 @@ react-native-maps@1.20.1:
   dependencies:
     "@types/geojson" "^7946.0.13"
 
+react-native-pager-view@6.7.1:
+  version "6.7.1"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.7.1.tgz#60d52dedbcc92ee7037a13287ebeed5f74e49df7"
+  integrity sha512-cBSr6xw4g5N7Kd3VGWcf+kmaH7iBWb0DXAf2bVo3bXkzBcBbTOmYSvc0LVLHhUPW8nEq5WjT9LCIYAzgF++EXw==
+
 react-native-paper@^5.13.5:
   version "5.14.1"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.14.1.tgz#280883a41abe0531279cff72330fee60c97b7a97"
@@ -5105,6 +5110,11 @@ react-native-paper@^5.13.5:
     "@callstack/react-theme-provider" "^3.0.9"
     color "^3.1.2"
     use-latest-callback "^0.2.3"
+
+react-native-reanimated-carousel@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated-carousel/-/react-native-reanimated-carousel-4.0.2.tgz#4d719afd18c2007e7809f2849ccbee17a2dbd811"
+  integrity sha512-vNpCfPlFoOVKHd+oB7B0luoJswp+nyz0NdJD8+LCrf25JiNQXfM22RSJhLaksBHqk3fm8R4fKWPNcfy5w7wL1Q==
 
 react-native-reanimated@~3.17.4:
   version "3.17.5"

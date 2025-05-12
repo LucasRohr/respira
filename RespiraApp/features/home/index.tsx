@@ -1,11 +1,13 @@
 import { useCallback } from "react";
 import { ActivityIndicator, View, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
+import PagerView from "react-native-pager-view";
+
+import { COLORS } from "@/constants";
 
 import { styles } from "./styles";
 import { useHomeCompose } from "./hooks";
-import { COLORS } from "@/constants";
-import { HomeRecommendations } from "./components";
+import { HomeAirQualityCard, HomeRecommendations } from "./components";
 
 export const HomePage = () => {
   const { user, airHistory, airQuality, mapRegion, isLoading, isError, error } =
@@ -23,6 +25,35 @@ export const HomePage = () => {
       </MapView>
     );
   }, [mapRegion]);
+
+  const renderAirQualityCarousel = useCallback(() => {
+    if (!airQuality || !airHistory) {
+      return null;
+    }
+
+    return (
+      <View style={styles.carouselContainer}>
+        <PagerView style={styles.carousel} initialPage={0}>
+          <HomeAirQualityCard
+            key="1"
+            city={airQuality?.location.city ?? ""}
+            state={airQuality?.location.state ?? ""}
+            pollutants={airQuality?.airQualityReport.pollutants ?? []}
+            isFavorite={false}
+          />
+          {airHistory.reports.map((item, index) => (
+            <HomeAirQualityCard
+              key={`${index + 2}`}
+              city={airQuality?.location.city ?? ""}
+              state={airQuality?.location.state ?? ""}
+              pollutants={item.pollutants}
+              isFavorite={false}
+            />
+          ))}
+        </PagerView>
+      </View>
+    );
+  }, [airQuality, airHistory]);
 
   const renderRecommendations = useCallback(() => {
     if (!airQuality) {
@@ -56,6 +87,7 @@ export const HomePage = () => {
 
     return (
       <View style={styles.container}>
+        {renderAirQualityCarousel()}
         {renderMap()}
         {renderRecommendations()}
       </View>

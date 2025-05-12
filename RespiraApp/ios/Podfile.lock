@@ -1414,6 +1414,30 @@ PODS:
     - ReactCommon/turbomodule/core
   - react-native-maps (1.20.1):
     - React-Core
+  - react-native-pager-view (6.7.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-safe-area-context (5.4.0):
     - DoubleConversion
     - glog
@@ -2095,6 +2119,7 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-maps (from `../node_modules/react-native-maps`)
+  - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -2249,6 +2274,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
+  react-native-pager-view:
+    :path: "../node_modules/react-native-pager-view"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-webview:
@@ -2380,6 +2407,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: c04fcda1c6281fc0a6824c7dcc1633dd217ac1ec
   React-microtasksnativemodule: ca2804a25fdcefffa0aa942aa23ab53b99614a34
   react-native-maps: ee1e65647460c3d41e778071be5eda10e3da6225
+  react-native-pager-view: 794f015a4e3b7cfb9ede97c73eae15c0d11a3fbc
   react-native-safe-area-context: 00d03dc688ba86664be66f9e3f203fc7d747d899
   react-native-webview: cde150463e7caa49b316b0ed1871e7ef8193bef4
   React-NativeModulesApple: 452b86b29fae99ed0a4015dca3ad9cd222f88abf

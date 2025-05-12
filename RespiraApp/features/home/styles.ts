@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     alignItems: "center",
     justifyContent: "center",
+    position: "relative",
   },
   map: {
     width: "100%",
@@ -26,5 +27,16 @@ export const styles = StyleSheet.create({
     color: COLORS.error,
     fontSize: FONT_SIZES.big,
     textAlign: "center",
+  },
+  carousel: {
+    flex: 1,
+    height: 160,
+  },
+  carouselContainer: {
+    position: "absolute",
+    top: 64,
+    width: "95%",
+    alignSelf: "flex-start",
+    zIndex: 10,
   },
 });

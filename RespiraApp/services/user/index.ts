@@ -9,7 +9,7 @@ import mockData from "./mock-data.json";
 export const getUser = async (): Promise<IUser> => {
   try {
     // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // const response = await axiosInstance.get<ApiUser>("/user");
 

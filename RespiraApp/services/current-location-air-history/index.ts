@@ -14,7 +14,7 @@ export const getCurrentLocationAirHistory = async (
 ): Promise<ICurrentLocationAirHistory> => {
   try {
     // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // const response = await axiosInstance.get<ApiCurrentLocationAirHistory>(
     //   "/current-location-air-quality",

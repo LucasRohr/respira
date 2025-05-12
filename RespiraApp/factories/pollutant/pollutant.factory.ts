@@ -4,7 +4,7 @@ const buildEmptyObject = (): IPollutant => ({
   id: 0,
   name: "",
   concentration: "",
-  severity: "",
+  severity: "BAIXO",
 });
 
 export const pollutantFactory = (apiObject: ApiPollutant): IPollutant => {
@@ -18,6 +18,6 @@ export const pollutantFactory = (apiObject: ApiPollutant): IPollutant => {
     id: id ?? 0,
     name: name ?? "",
     concentration: concentration ?? "",
-    severity: severity ?? "",
+    severity: (severity as "BAIXO" | "MEDIO" | "ALTO") ?? "",
   };
 };

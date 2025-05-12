@@ -1,42 +1,66 @@
-import { useCallback, useState } from "react";
-import { View } from "react-native";
+import { useCallback } from "react";
+import { ActivityIndicator, View, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
 import { styles } from "./styles";
-import {
-  useCurrentAirHistory,
-  useCurrentAirQuality,
-  useHomeUser,
-} from "./hooks";
+import { useHomeCompose } from "./hooks";
+import { COLORS } from "@/constants";
+import { HomeRecommendations } from "./components";
 
 export const HomePage = () => {
-  const { user, errorUser, isErrorUser, isLoadingUser } = useHomeUser();
-
-  const { airQuality, errorQuality, isErrorQuality, isLoadingQuality } =
-    useCurrentAirQuality();
-
-  const { airHistory, errorHistory, isErrorHistory, isLoadingHistory } =
-    useCurrentAirHistory(airQuality?.location.id ?? 0);
-
-  const [region, setRegion] = useState({
-    latitude: -30.027542,
-    longitude: -51.175467,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
-  });
+  const { user, airHistory, airQuality, mapRegion, isLoading, isError, error } =
+    useHomeCompose();
 
   const renderMap = useCallback(() => {
     return (
-      <MapView style={styles.map} region={region}>
+      <MapView style={styles.map} region={mapRegion}>
         <Marker
           coordinate={{
-            latitude: -30.027542,
-            longitude: -51.175467,
+            latitude: mapRegion.latitude,
+            longitude: mapRegion.longitude,
           }}
         />
       </MapView>
     );
-  }, [region]);
+  }, [mapRegion]);
 
-  return <View style={styles.container}>{renderMap()}</View>;
+  const renderRecommendations = useCallback(() => {
+    if (!airQuality) {
+      return null;
+    }
+
+    return (
+      <HomeRecommendations
+        currentAirQuality={airQuality?.airQualityReport.generalSeverity}
+        recommendations={airQuality?.recommendations ?? []}
+      />
+    );
+  }, [airQuality]);
+
+  const renderContent = useCallback(() => {
+    if (isLoading) {
+      return (
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color={COLORS.primary} />
+        </View>
+      );
+    }
+
+    if (isError) {
+      return (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>{error?.message}</Text>
+        </View>
+      );
+    }
+
+    return (
+      <View style={styles.container}>
+        {renderMap()}
+        {renderRecommendations()}
+      </View>
+    );
+  }, [isLoading, isError, error]);
+
+  return renderContent();
 };

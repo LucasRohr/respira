@@ -4,7 +4,7 @@ import { pollutantFactory } from "../pollutant/pollutant.factory";
 const buildEmptyObject = (): IAirQualityReport => ({
   id: 0,
   date: "",
-  generalSeverity: "",
+  generalSeverity: "BOA",
   pollutants: [],
 });
 
@@ -20,7 +20,7 @@ export const airQualityReportFactory = (
   return {
     id: id ?? 0,
     date: date ?? "",
-    generalSeverity: generalSeverity ?? "",
+    generalSeverity: generalSeverity ?? "BOA",
     pollutants: pollutants?.map(pollutantFactory) ?? [],
   };
 };

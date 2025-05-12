@@ -5,7 +5,7 @@ import { getCurrentLocationAirHistory } from "@/services";
 
 export const useCurrentAirHistory = (locationId: number) => {
   const { data, isLoading, error, isError } = useQuery({
-    queryKey: [QUERY_KEYS.GET_CURRENT_QUALITY],
+    queryKey: [QUERY_KEYS.GET_CURRENT_HISTORY],
     queryFn: () => getCurrentLocationAirHistory(locationId),
   });
 

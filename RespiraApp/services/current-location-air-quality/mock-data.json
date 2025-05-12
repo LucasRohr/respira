@@ -5,8 +5,8 @@
     "city": "Porto Alegre",
     "state": "Rio Grande do Sul",
     "cep": "91310-000",
-    "lat": -30.0346,
-    "long": -51.2177
+    "lat": -30.027542,
+    "long": -51.175467
   },
   "airQualityReport": {
     "id": 456,
@@ -32,5 +32,10 @@
         "severity": "ALTO"
       }
     ]
-  }
+  },
+  "recommendations": [
+    "Evite atividades ao ar livre durante o pico de poluição.",
+    "Use máscara se necessário.",
+    "Mantenha janelas fechadas para evitar a entrada de poluentes."
+  ]
 }

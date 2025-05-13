@@ -1,4 +1,4 @@
-import { FavoritesPage } from "@/pages";
+import { FavoritesPage } from "@/features";
 
 export default function Favorites() {
   return <FavoritesPage />;

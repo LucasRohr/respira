@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { COLORS, POLLUTANT_STATUS } from "@/constants";
@@ -7,6 +7,7 @@ import { COLORS, POLLUTANT_STATUS } from "@/constants";
 import type { LocationAirQualityCardProps } from "./types";
 import { styles } from "./styles";
 import { LOCATION_AIR_QUALITY_CARD_STRINGS } from "./strings";
+import { useNavigation, useRouter } from "expo-router";
 
 export const LocationAirQualityCard = ({
   id,
@@ -15,6 +16,15 @@ export const LocationAirQualityCard = ({
   pollutants,
   isFavorite,
 }: LocationAirQualityCardProps) => {
+  const router = useRouter();
+
+  const navigateToDetails = useCallback(() => {
+    router.push({
+      pathname: "/location-details/[id]",
+      params: { id },
+    });
+  }, [id]);
+
   const renderPollutants = useCallback(() => {
     return pollutants.map(({ name, concentration, severity }, index) => {
       const severityParsed = POLLUTANT_STATUS[severity];
@@ -31,7 +41,11 @@ export const LocationAirQualityCard = ({
   }, [pollutants]);
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      style={styles.container}
+      onPress={navigateToDetails}
+    >
       <View style={styles.header}>
         <Text style={styles.locationTitle}>
           {city}, {state}
@@ -47,6 +61,6 @@ export const LocationAirQualityCard = ({
         {LOCATION_AIR_QUALITY_CARD_STRINGS.POLLUTANTS_TITLE}
       </Text>
       <View style={styles.pollutantsContainer}>{renderPollutants()}</View>
-    </View>
+    </TouchableOpacity>
   );
 };

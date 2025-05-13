@@ -15,6 +15,14 @@ export default function RootLayout() {
             name="tabs"
             options={{ headerShown: false, gestureEnabled: false }}
           />
+          <Stack.Screen
+            name="location-details/[id]"
+            options={{
+              headerTransparent: true,
+              headerBackVisible: false,
+              headerTitle: "Detalhes",
+            }}
+          />
         </Stack>
       </QueryClientProvider>
     </>

@@ -4,3 +4,5 @@ export { currentLocationAirQualityFactory } from "./current-location-air-quality
 export { locationFactory } from "./location/location.factory";
 export { pollutantFactory } from "./pollutant/pollutant.factory";
 export { userFactory } from "./user/user.factory";
+export { locationAirQualityFactory } from "./location-air-quality/location-air-quality.factory";
+export { searchLocationResultFactory } from "./search-location-result/search-location-result.factory";

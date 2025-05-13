@@ -19,6 +19,7 @@ const buildEmptyObject = (): ILocationAirQuality => ({
     generalSeverity: "BOA",
     pollutants: [],
   },
+  isFavorite: false,
 });
 
 export const locationAirQualityFactory = (
@@ -28,12 +29,13 @@ export const locationAirQualityFactory = (
     return buildEmptyObject();
   }
 
-  const { location, airQualityReport } = apiObject;
+  const { location, airQualityReport, isFavorite } = apiObject;
 
   return {
     location: locationFactory(location ?? buildEmptyObject().location),
     airQualityReport: airQualityReportFactory(
       airQualityReport ?? buildEmptyObject().airQualityReport
     ),
+    isFavorite: isFavorite ?? false,
   };
 };

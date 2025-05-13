@@ -4,4 +4,5 @@ import { ILocation } from "../location/location";
 export interface ILocationAirQuality {
   location: ILocation;
   airQualityReport: IAirQualityReport;
+  isFavorite: boolean;
 }

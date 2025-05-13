@@ -7,7 +7,9 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     alignItems: "center",
     paddingHorizontal: PADDINGS.pageHorizontal,
-    paddingVertical: PADDINGS.pageVertical,
+    paddingTop: PADDINGS.pageVertical,
+
+    width: "100%",
   },
   text: {
     color: COLORS.text,
@@ -26,5 +28,13 @@ export const styles = StyleSheet.create({
     color: COLORS.error,
     fontSize: FONT_SIZES.big,
     textAlign: "center",
+  },
+  searchResultsContainer: {
+    flex: 1,
+    width: "100%",
+    marginTop: 16,
+  },
+  listFooter: {
+    height: 32,
   },
 });

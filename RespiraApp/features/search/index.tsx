@@ -1,7 +1,7 @@
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { TextInput } from "react-native-paper";
 
-import { Input } from "@/components";
+import { Input, LocationAirQualityCard } from "@/components";
 import { COLORS } from "@/constants";
 
 import { styles } from "./styles";
@@ -18,7 +18,27 @@ export const SearchPage = () => {
       return null;
     }
 
-    return <Text>{searchResult.locationsReports.length}</Text>;
+    return (
+      <FlatList
+        data={searchResult.locationsReports}
+        keyExtractor={(_, index) => index.toString()}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={() => <View style={styles.listFooter} />}
+        renderItem={({ item }) => {
+          const { location, airQualityReport, isFavorite } = item;
+
+          return (
+            <LocationAirQualityCard
+              id={airQualityReport.id}
+              city={location.name}
+              state={location.state}
+              pollutants={airQualityReport.pollutants}
+              isFavorite={isFavorite}
+            />
+          );
+        }}
+      />
+    );
   }, [searchResult]);
 
   const renderContent = useCallback(() => {
@@ -38,7 +58,9 @@ export const SearchPage = () => {
       );
     }
 
-    return <View style={styles.container}>{renderSearchResults()}</View>;
+    return (
+      <View style={styles.searchResultsContainer}>{renderSearchResults()}</View>
+    );
   }, [searchResult, isLoading, isError, error]);
 
   return (

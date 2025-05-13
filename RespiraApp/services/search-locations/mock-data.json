@@ -34,7 +34,8 @@
             "severity": "ALTO"
           }
         ]
-      }
+      },
+      "isFavorite": true
     },
     {
       "location": {
@@ -70,7 +71,8 @@
             "severity": "BAIXO"
           }
         ]
-      }
+      },
+      "isFavorite": true
     },
     {
       "location": {
@@ -106,7 +108,8 @@
             "severity": "ALTO"
           }
         ]
-      }
+      },
+      "isFavorite": false
     },
     {
       "location": {
@@ -148,7 +151,8 @@
             "severity": "ALTO"
           }
         ]
-      }
+      },
+      "isFavorite": false
     }
   ]
 }

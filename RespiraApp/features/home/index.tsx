@@ -8,6 +8,7 @@ import { COLORS } from "@/constants";
 import { styles } from "./styles";
 import { useHomeCompose } from "./hooks";
 import { HomeAirQualityCard, HomeRecommendations } from "./components";
+import { AirHistoryCard } from "@/components";
 
 export const HomePage = () => {
   const { user, airHistory, airQuality, mapRegion, isLoading, isError, error } =
@@ -42,12 +43,11 @@ export const HomePage = () => {
             isFavorite={false}
           />
           {airHistory.reports.map((item, index) => (
-            <HomeAirQualityCard
+            <AirHistoryCard
               key={`${index + 2}`}
-              city={airQuality?.location.city ?? ""}
-              state={airQuality?.location.state ?? ""}
+              date={item.date}
+              generalSeverity={item.generalSeverity}
               pollutants={item.pollutants}
-              isFavorite={false}
             />
           ))}
         </PagerView>

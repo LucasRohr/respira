@@ -18,14 +18,14 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 8,
   },
-  locationTitle: {
-    color: COLORS.primary,
-    fontSize: FONT_SIZES.big,
-    marginBottom: 8,
-  },
-  pollutantsTitle: {
+  date: {
     color: COLORS.text,
     fontSize: FONT_SIZES.normal,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+  generalSeverity: {
+    fontSize: FONT_SIZES.big,
     fontWeight: "bold",
     marginBottom: 8,
   },

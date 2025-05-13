@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   },
   carousel: {
     flex: 1,
-    height: 160,
+    height: 190,
   },
   carouselContainer: {
     position: "absolute",

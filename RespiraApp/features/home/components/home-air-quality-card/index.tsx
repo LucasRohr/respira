@@ -44,7 +44,7 @@ export const HomeAirQualityCard = ({
       <Text style={styles.pollutantsTitle}>
         {HOME_AIR_QUALITY_STRINGS.POLLUTANTS_TITLE}
       </Text>
-      {renderPollutants()}
+      <View style={styles.pollutantsContainer}>{renderPollutants()}</View>
     </View>
   );
 };

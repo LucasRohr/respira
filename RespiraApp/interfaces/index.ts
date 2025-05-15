@@ -15,3 +15,9 @@ export { ApiCurrentLocationAirQuality } from "./current-location-air-quality/api
 
 export { ICurrentLocationAirHistory } from "./current-location-air-history/current-location-air-history";
 export { ApiCurrentLocationAirHistory } from "./current-location-air-history/api-current-location-air-history";
+
+export { ILocationAirQuality } from "./location-air-quality/location-air-quality";
+export { ApiLocationAirQuality } from "./location-air-quality/api-location-air-quality";
+
+export { ISearchLocationResult } from "./search-location-result/search-location-result";
+export { ApiSearchLocationResult } from "./search-location-result/api-search-location-result";

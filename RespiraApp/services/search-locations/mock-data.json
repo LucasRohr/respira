@@ -1,0 +1,158 @@
+{
+  "locationsReports": [
+    {
+      "location": {
+        "id": 123,
+        "name": "Bairro Vila Ipiranga",
+        "city": "Porto Alegre",
+        "state": "RS",
+        "cep": "91310-000",
+        "lat": -30.027542,
+        "long": -51.175467
+      },
+      "airQualityReport": {
+        "id": 456,
+        "date": "2025-05-09T12:00:00Z",
+        "generalSeverity": "MEDIA",
+        "pollutants": [
+          {
+            "id": 1,
+            "name": "CO₂",
+            "concentration": "10 µg/m³",
+            "severity": "MEDIO"
+          },
+          {
+            "id": 2,
+            "name": "SO₂",
+            "concentration": "25 µg/m³",
+            "severity": "BAIXO"
+          },
+          {
+            "id": 3,
+            "name": "NO₂",
+            "concentration": "85 µg/m³",
+            "severity": "ALTO"
+          }
+        ]
+      },
+      "isFavorite": true
+    },
+    {
+      "location": {
+        "id": 123,
+        "name": "Bom Fim",
+        "city": "Porto Alegre",
+        "state": "RS",
+        "cep": "99999-123",
+        "lat": -30.027542,
+        "long": -51.175467
+      },
+      "airQualityReport": {
+        "id": 456,
+        "date": "2025-05-09T12:00:00Z",
+        "generalSeverity": "BOA",
+        "pollutants": [
+          {
+            "id": 1,
+            "name": "CO₂",
+            "concentration": "2 µg/m³",
+            "severity": "BAIXO"
+          },
+          {
+            "id": 2,
+            "name": "SO₂",
+            "concentration": "10 µg/m³",
+            "severity": "BAIXO"
+          },
+          {
+            "id": 3,
+            "name": "NO₂",
+            "concentration": "20 µg/m³",
+            "severity": "BAIXO"
+          }
+        ]
+      },
+      "isFavorite": true
+    },
+    {
+      "location": {
+        "id": 123,
+        "name": "Moinhos de Vento",
+        "city": "Porto Alegre",
+        "state": "RS",
+        "cep": "91666-000",
+        "lat": -30.027542,
+        "long": -51.175467
+      },
+      "airQualityReport": {
+        "id": 456,
+        "date": "2025-05-09T12:00:00Z",
+        "generalSeverity": "RUIM",
+        "pollutants": [
+          {
+            "id": 1,
+            "name": "CO₂",
+            "concentration": "50 µg/m³",
+            "severity": "ALTO"
+          },
+          {
+            "id": 2,
+            "name": "SO₂",
+            "concentration": "85 µg/m³",
+            "severity": "ALTO"
+          },
+          {
+            "id": 3,
+            "name": "NO₂",
+            "concentration": "85 µg/m³",
+            "severity": "ALTO"
+          }
+        ]
+      },
+      "isFavorite": false
+    },
+    {
+      "location": {
+        "id": 123,
+        "name": "Bairro Partenon",
+        "city": "Porto Alegre",
+        "state": "RS",
+        "cep": "91310-000",
+        "lat": -30.027542,
+        "long": -51.175467
+      },
+      "airQualityReport": {
+        "id": 456,
+        "date": "2025-05-09T12:00:00Z",
+        "generalSeverity": "RUIM",
+        "pollutants": [
+          {
+            "id": 1,
+            "name": "CO₂",
+            "concentration": "10 µg/m³",
+            "severity": "ALTO"
+          },
+          {
+            "id": 2,
+            "name": "SO₂",
+            "concentration": "25 µg/m³",
+            "severity": "ALTO"
+          },
+          {
+            "id": 3,
+            "name": "NO₂",
+            "concentration": "85 µg/m³",
+            "severity": "ALTO"
+          },
+          {
+            "id": 4,
+            "name": "O3",
+            "concentration": "80 µg/m³",
+            "severity": "ALTO"
+          }
+        ]
+      },
+      "isFavorite": false
+    }
+  ]
+}

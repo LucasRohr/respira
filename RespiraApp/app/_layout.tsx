@@ -18,8 +18,8 @@ export default function RootLayout() {
           <Stack.Screen
             name="location-details/[id]"
             options={{
-              headerTransparent: true,
-              headerBackVisible: false,
+              headerTransparent: false,
+              headerBackTitle: "Voltar",
               headerTitle: "Detalhes",
             }}
           />

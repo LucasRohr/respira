@@ -5,5 +5,6 @@ export interface ILocationDetails {
   location: ILocation;
   airQualityReport: IAirQualityReport;
   airQualityHistory: IAirQualityReport[];
+  recommendations: string[];
   isFavorite: boolean;
 }

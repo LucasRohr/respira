@@ -12,6 +12,7 @@ export const AirHistoryCard = ({
   date,
   generalSeverity,
   pollutants,
+  customContainerStyle,
 }: AirHistoryCardProps) => {
   const memoDate = useMemo(() => {
     const dayJSDate = dayjs(date);
@@ -50,7 +51,7 @@ export const AirHistoryCard = ({
   }, [pollutants]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, customContainerStyle]}>
       <View style={styles.header}>
         <Text style={styles.date}>
           {AIR_HISTORY_CARD_STRINGS.DATE_LABEL} {memoDate}

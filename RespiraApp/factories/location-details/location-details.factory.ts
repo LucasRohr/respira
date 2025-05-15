@@ -19,6 +19,7 @@ const buildEmptyObject = (): ILocationDetails => ({
     pollutants: [],
   },
   airQualityHistory: [],
+  recommendations: [],
   isFavorite: false,
 });
 
@@ -29,8 +30,13 @@ export const locationDetailsFactory = (
     return buildEmptyObject();
   }
 
-  const { location, airQualityReport, airQualityHistory, isFavorite } =
-    apiObject;
+  const {
+    location,
+    airQualityReport,
+    airQualityHistory,
+    recommendations,
+    isFavorite,
+  } = apiObject;
 
   return {
     location: locationFactory(location ?? buildEmptyObject().location),
@@ -38,6 +44,7 @@ export const locationDetailsFactory = (
       airQualityReport ?? buildEmptyObject().airQualityReport
     ),
     airQualityHistory: airQualityHistory?.map(airQualityReportFactory) ?? [],
+    recommendations: recommendations ?? [],
     isFavorite: isFavorite ?? false,
   };
 };

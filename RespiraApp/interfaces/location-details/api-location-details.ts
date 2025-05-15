@@ -5,5 +5,6 @@ export interface ApiLocationDetails {
   location?: ApiLocation;
   airQualityReport?: ApiAirQualityReport;
   airQualityHistory?: ApiAirQualityReport[];
+  recommendations?: string[];
   isFavorite?: boolean;
 }

@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     alignItems: "center",
     paddingHorizontal: PADDINGS.pageHorizontal,
-    paddingTop: PADDINGS.pageVertical,
     width: "100%",
   },
   contentWrapper: {

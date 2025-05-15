@@ -51,6 +51,20 @@ export const LocationDetailsPage = ({
     );
   }, [locationDetails?.airQualityReport, locationDetails?.recommendations]);
 
+  const renderListHeader = useCallback(() => {
+    return (
+      <>
+        {renderHeader()}
+        {renderAirQuality()}
+        <View style={styles.listHeaderContainer}>
+          <Text style={styles.listHeaderTitle}>
+            {LOCATION_DETAILS_STRINGS.HISTORY_TITLE}
+          </Text>
+        </View>
+      </>
+    );
+  }, []);
+
   const renderHistory = useCallback(() => {
     if (!locationDetails?.airQualityHistory) {
       return null;
@@ -61,13 +75,7 @@ export const LocationDetailsPage = ({
         data={locationDetails.airQualityHistory}
         showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
-        ListHeaderComponent={() => (
-          <View style={styles.listHeaderContainer}>
-            <Text style={styles.listHeaderTitle}>
-              {LOCATION_DETAILS_STRINGS.HISTORY_TITLE}
-            </Text>
-          </View>
-        )}
+        ListHeaderComponent={renderListHeader}
         ListFooterComponent={() => <View style={styles.listFooter} />}
         ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
         renderItem={({ item }) => {
@@ -103,13 +111,7 @@ export const LocationDetailsPage = ({
       );
     }
 
-    return (
-      <View style={styles.contentWrapper}>
-        {renderHeader()}
-        {renderAirQuality()}
-        {renderHistory()}
-      </View>
-    );
+    return <View style={styles.contentWrapper}>{renderHistory()}</View>;
   }, [locationDetails, isLoading, isError, error]);
 
   return <View style={styles.container}>{renderContent()}</View>;

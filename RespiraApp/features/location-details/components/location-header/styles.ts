@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 24,
+    marginTop: 32,
   },
   title: {
     fontSize: FONT_SIZES.normal,

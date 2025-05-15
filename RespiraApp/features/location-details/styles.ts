@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     height: 16,
   },
   listFooter: {
-    height: 32,
+    height: 64,
   },
   historyCard: {
     width: "100%",

@@ -7,7 +7,7 @@ import type { LocationDetailsPageProps } from "./types";
 import { useLocationDetails } from "./hooks";
 import { styles } from "./styles";
 import { AirHistoryCard } from "@/components";
-import { LocationHeader } from "./components";
+import { LocationAirQualityCard, LocationHeader } from "./components";
 import { LOCATION_DETAILS_STRINGS } from "./strings";
 
 export const LocationDetailsPage = ({
@@ -35,6 +35,22 @@ export const LocationDetailsPage = ({
     );
   }, [locationDetails?.location, locationDetails?.isFavorite]);
 
+  const renderAirQuality = useCallback(() => {
+    const hasInvalidData =
+      !locationDetails?.airQualityReport && !locationDetails?.recommendations;
+
+    if (hasInvalidData) {
+      return null;
+    }
+
+    return (
+      <LocationAirQualityCard
+        airQualityReport={locationDetails.airQualityReport}
+        recommendations={locationDetails.recommendations}
+      />
+    );
+  }, [locationDetails?.airQualityReport, locationDetails?.recommendations]);
+
   const renderHistory = useCallback(() => {
     if (!locationDetails?.airQualityHistory) {
       return null;
@@ -45,15 +61,13 @@ export const LocationDetailsPage = ({
         data={locationDetails.airQualityHistory}
         showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
-        ListHeaderComponent={() => {
-          return (
-            <View style={styles.listHeaderContainer}>
-              <Text style={styles.listHeaderTitle}>
-                {LOCATION_DETAILS_STRINGS.HISTORY_TITLE}
-              </Text>
-            </View>
-          );
-        }}
+        ListHeaderComponent={() => (
+          <View style={styles.listHeaderContainer}>
+            <Text style={styles.listHeaderTitle}>
+              {LOCATION_DETAILS_STRINGS.HISTORY_TITLE}
+            </Text>
+          </View>
+        )}
         ListFooterComponent={() => <View style={styles.listFooter} />}
         ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
         renderItem={({ item }) => {
@@ -92,6 +106,7 @@ export const LocationDetailsPage = ({
     return (
       <View style={styles.contentWrapper}>
         {renderHeader()}
+        {renderAirQuality()}
         {renderHistory()}
       </View>
     );

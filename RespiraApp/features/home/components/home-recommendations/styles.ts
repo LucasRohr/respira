@@ -16,16 +16,18 @@ export const styles = StyleSheet.create({
   },
   airStatusTitle: {
     fontSize: FONT_SIZES.normal,
+    fontWeight: "600",
     marginBottom: 8,
   },
   recommendationTitle: {
     color: COLORS.primary,
     fontSize: FONT_SIZES.normal,
+    fontWeight: "600",
     marginBottom: 8,
   },
   recommendation: {
     color: COLORS.text,
-    fontSize: FONT_SIZES.small,
+    fontSize: FONT_SIZES.normal,
     marginBottom: 8,
     marginLeft: 8,
   },

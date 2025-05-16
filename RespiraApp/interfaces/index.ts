@@ -21,3 +21,6 @@ export { ApiLocationAirQuality } from "./location-air-quality/api-location-air-q
 
 export { ISearchLocationResult } from "./search-location-result/search-location-result";
 export { ApiSearchLocationResult } from "./search-location-result/api-search-location-result";
+
+export { ILocationDetails } from "./location-details/location-details";
+export { ApiLocationDetails } from "./location-details/api-location-details";

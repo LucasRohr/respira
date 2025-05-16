@@ -38,5 +38,6 @@ export const styles = StyleSheet.create({
   pollutant: {
     fontSize: FONT_SIZES.normal,
     marginBottom: 8,
+    fontWeight: "600",
   },
 });

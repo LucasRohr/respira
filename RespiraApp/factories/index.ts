@@ -7,3 +7,4 @@ export { userFactory } from "./user/user.factory";
 export { locationAirQualityFactory } from "./location-air-quality/location-air-quality.factory";
 export { searchLocationResultFactory } from "./search-location-result/search-location-result.factory";
 export { locationDetailsFactory } from "./location-details/location-details.factory";
+export { favoriteLocationsListFactory } from "./favorite-locations-list/favorite-locations-list.factory";

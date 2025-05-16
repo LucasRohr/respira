@@ -24,3 +24,9 @@ export { ApiSearchLocationResult } from "./search-location-result/api-search-loc
 
 export { ILocationDetails } from "./location-details/location-details";
 export { ApiLocationDetails } from "./location-details/api-location-details";
+
+export { ApiFavoriteLocation } from "./favorite-location/api-favorite-location";
+export { IFavoriteLocation } from "./favorite-location/favorite-location";
+
+export { ApiFavoriteLocationsList } from "./favorite-locations-list/api-favorite-locations-list";
+export { IFavoriteLocationsList } from "./favorite-locations-list/favorite-locations-list";

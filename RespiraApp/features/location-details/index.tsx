@@ -63,7 +63,7 @@ export const LocationDetailsPage = ({
         </View>
       </>
     );
-  }, []);
+  }, [renderHeader, renderAirQuality]);
 
   const renderHistory = useCallback(() => {
     if (!locationDetails?.airQualityHistory) {

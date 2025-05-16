@@ -8,11 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: PADDINGS.pageHorizontal,
     paddingTop: PADDINGS.pageVertical,
-
     width: "100%",
-  },
-  text: {
-    color: COLORS.text,
   },
   loadingContainer: {
     flex: 1,

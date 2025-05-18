@@ -30,3 +30,6 @@ export { IFavoriteLocation } from "./favorite-location/favorite-location";
 
 export { ApiFavoriteLocationsList } from "./favorite-locations-list/api-favorite-locations-list";
 export { IFavoriteLocationsList } from "./favorite-locations-list/favorite-locations-list";
+
+export { IAddFavoriteLocation } from "./add-favorite-location/add-favorite-location";
+export { IRemoveFavoriteLocation } from "./remove-favorite-location/remove-favorite-location";

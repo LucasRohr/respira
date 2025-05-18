@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, FONT_SIZES, PADDINGS } from "@/constants";
+import { COLORS, FONT_SIZES, SPACINGS } from "@/constants";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
-    paddingHorizontal: PADDINGS.pageHorizontal,
+    paddingHorizontal: SPACINGS.pageHorizontal,
     width: "100%",
   },
   text: {
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     fontSize: FONT_SIZES.big,
     fontWeight: "600",
     marginBottom: 18,
-    marginTop: PADDINGS.pageVertical,
+    marginTop: SPACINGS.pageVertical,
   },
   loadingContainer: {
     flex: 1,

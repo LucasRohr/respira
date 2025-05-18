@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
-import { COLORS, FONT_SIZES, PADDINGS } from "@/constants";
+import { COLORS, FONT_SIZES, SPACINGS } from "@/constants";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
     alignItems: "center",
-    paddingHorizontal: PADDINGS.pageHorizontal,
-    paddingTop: PADDINGS.pageVertical,
+    paddingHorizontal: SPACINGS.pageHorizontal,
+    paddingTop: SPACINGS.pageVertical,
     width: "100%",
   },
   loadingContainer: {

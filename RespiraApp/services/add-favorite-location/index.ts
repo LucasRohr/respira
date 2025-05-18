@@ -33,6 +33,13 @@ export const addFavoriteLocation = async (
         marginBottom: SPACINGS.snackbarMargin,
         backgroundColor: COLORS.success,
       });
+    } else {
+      Snackbar.show({
+        text: ADD_FAVORITE_LOCATION_STRINGS.SNACKBAR_ERROR,
+        duration: Snackbar.LENGTH_SHORT,
+        marginBottom: SPACINGS.snackbarMargin,
+        backgroundColor: COLORS.error,
+      });
     }
 
     return isSuccess;

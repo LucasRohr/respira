@@ -1,5 +1,4 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { useRouter } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { COLORS } from "@/constants";
@@ -13,6 +12,7 @@ export const LocationHeader = ({
   city,
   state,
   isFavorite,
+  onPressFavorite,
 }: LocationHeaderProps) => {
   return (
     <View style={styles.container}>
@@ -23,7 +23,7 @@ export const LocationHeader = ({
           {name}, {city} - {state}
         </Text>
       </View>
-      <TouchableOpacity style={styles.favoriteButton} onPress={() => {}}>
+      <TouchableOpacity style={styles.favoriteButton} onPress={onPressFavorite}>
         <Ionicons
           name={isFavorite ? "star" : "star-outline"}
           color={COLORS.primary}

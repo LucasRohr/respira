@@ -5,4 +5,5 @@ export interface HomeAirQualityCardProps {
   state: string;
   pollutants: IPollutant[];
   isFavorite: boolean;
+  onPressFavorite: VoidFunction;
 }

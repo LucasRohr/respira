@@ -7,8 +7,9 @@ import type { LocationDetailsPageProps } from "./types";
 import { useLocationDetails } from "./hooks";
 import { styles } from "./styles";
 import { AirHistoryCard } from "@/components";
-import { LocationAirQualityCard, LocationHeader } from "./components";
+import { LocationDetailsAirQualityCard, LocationHeader } from "./components";
 import { LOCATION_DETAILS_STRINGS } from "./strings";
+import { useUpdateFavoriteLocation } from "@/hooks";
 
 export const LocationDetailsPage = ({
   locationId,
@@ -17,23 +18,43 @@ export const LocationDetailsPage = ({
     parseInt(locationId)
   );
 
+  const { currentIsFavorite, addFavoriteMutation, removeFavoriteMutation } =
+    useUpdateFavoriteLocation({
+      defaultIsFavorite: locationDetails?.isFavorite ?? false,
+    });
+
+  const onPressFavorite = useCallback(() => {
+    const locationId = locationDetails?.location?.id ?? 0;
+
+    if (currentIsFavorite) {
+      removeFavoriteMutation.mutate(locationId);
+    } else {
+      addFavoriteMutation.mutate(locationId);
+    }
+  }, [
+    locationDetails?.location?.id,
+    currentIsFavorite,
+    addFavoriteMutation,
+    removeFavoriteMutation,
+  ]);
+
   const renderHeader = useCallback(() => {
     if (!locationDetails?.location) {
       return null;
     }
 
     const { name, city, state } = locationDetails.location;
-    const isFavorite = locationDetails.isFavorite;
 
     return (
       <LocationHeader
         city={city}
         name={name}
         state={state}
-        isFavorite={isFavorite}
+        isFavorite={currentIsFavorite}
+        onPressFavorite={onPressFavorite}
       />
     );
-  }, [locationDetails?.location, locationDetails?.isFavorite]);
+  }, [locationDetails?.location, currentIsFavorite, onPressFavorite]);
 
   const renderAirQuality = useCallback(() => {
     const hasInvalidData =
@@ -44,7 +65,7 @@ export const LocationDetailsPage = ({
     }
 
     return (
-      <LocationAirQualityCard
+      <LocationDetailsAirQualityCard
         airQualityReport={locationDetails.airQualityReport}
         recommendations={locationDetails.recommendations}
       />
@@ -92,7 +113,7 @@ export const LocationDetailsPage = ({
         }}
       />
     );
-  }, [locationDetails?.airQualityHistory]);
+  }, [locationDetails?.airQualityHistory, renderListHeader]);
 
   const renderContent = useCallback(() => {
     if (isLoading) {
@@ -112,7 +133,7 @@ export const LocationDetailsPage = ({
     }
 
     return <View style={styles.contentWrapper}>{renderHistory()}</View>;
-  }, [locationDetails, isLoading, isError, error]);
+  }, [locationDetails, isLoading, isError, error, renderHistory]);
 
   return <View style={styles.container}>{renderContent()}</View>;
 };

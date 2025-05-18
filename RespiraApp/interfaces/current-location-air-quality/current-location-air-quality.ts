@@ -12,4 +12,5 @@ export interface ICurrentLocationAirQuality {
   location: ILocation;
   airQualityReport: IAirQualityReport;
   recommendations: string[];
+  isFavorite: boolean;
 }

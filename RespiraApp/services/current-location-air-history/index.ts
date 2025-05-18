@@ -17,7 +17,7 @@ export const getCurrentLocationAirHistory = async (
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // const response = await axiosInstance.get<ApiCurrentLocationAirHistory>(
-    //   "/current-location-air-quality",
+    //   "/current-location-air-history",
     //   {
     //     params: {
     //       id: locationId,

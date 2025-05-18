@@ -7,7 +7,7 @@ import type { LocationAirQualityCardProps } from "./types";
 import { LOCATION_AIR_QUALITY_CARD_STRINGS } from "./strings";
 import { styles } from "./styles";
 
-export const LocationAirQualityCard = ({
+export const LocationDetailsAirQualityCard = ({
   airQualityReport,
   recommendations,
 }: LocationAirQualityCardProps) => {

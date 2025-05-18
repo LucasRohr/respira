@@ -18,10 +18,11 @@ const buildEmptyObject = (): ICurrentLocationAirQuality => ({
   airQualityReport: {
     id: 0,
     date: "",
-    generalSeverity: "",
+    generalSeverity: "BOA",
     pollutants: [],
   },
   recommendations: [],
+  isFavorite: false,
 });
 
 export const currentLocationAirQualityFactory = (
@@ -31,7 +32,7 @@ export const currentLocationAirQualityFactory = (
     return buildEmptyObject();
   }
 
-  const { location, airQualityReport, recommendations } = apiObject;
+  const { location, airQualityReport, recommendations, isFavorite } = apiObject;
 
   return {
     location: locationFactory(location ?? buildEmptyObject().location),
@@ -39,5 +40,6 @@ export const currentLocationAirQualityFactory = (
       airQualityReport ?? buildEmptyObject().airQualityReport
     ),
     recommendations: recommendations ?? [],
+    isFavorite: isFavorite ?? false,
   };
 };

@@ -31,7 +31,7 @@ export const removeFavoriteLocation = async (
         text: REMOVE_FAVORITE_LOCATION_STRINGS.SNACKBAR_MESSAGE,
         duration: Snackbar.LENGTH_SHORT,
         marginBottom: SPACINGS.snackbarMargin,
-        backgroundColor: COLORS.success,
+        backgroundColor: COLORS.warning,
       });
     }
 

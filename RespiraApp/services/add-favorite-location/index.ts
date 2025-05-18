@@ -1,5 +1,7 @@
+import Snackbar from "react-native-snackbar";
+
 import type { IAddFavoriteLocation } from "@/interfaces";
-import { STATUS_CODES } from "@/constants";
+import { COLORS, STATUS_CODES } from "@/constants";
 
 // import { axiosInstance } from "../axios-config";
 
@@ -20,7 +22,18 @@ export const addFavoriteLocation = async (
       status: STATUS_CODES.SUCCESS,
     };
 
-    return response.status === STATUS_CODES.SUCCESS;
+    const isSuccess = response.status === STATUS_CODES.SUCCESS;
+
+    if (isSuccess) {
+      Snackbar.show({
+        text: "Local favoritado com sucesso",
+        duration: Snackbar.LENGTH_SHORT,
+        marginBottom: 80,
+        backgroundColor: COLORS.success,
+      });
+    }
+
+    return isSuccess;
   } catch (error) {
     throw error;
   }

@@ -9,5 +9,6 @@ export const COLORS = Object.freeze({
   success: "#9FC620",
   warning: "#E0B520",
   text: "#3E3C3C",
+  textSecondary: "#FBFBF8",
   textLight: "#404040",
 });

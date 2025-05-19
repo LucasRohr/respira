@@ -7,3 +7,4 @@ export { getLocationDetails } from "./location-details";
 export { getFavoriteLocations } from "./get-favorite-locations";
 export { addFavoriteLocation } from "./add-favorite-location";
 export { removeFavoriteLocation } from "./remove-favorite-location";
+export { updateUserProfile } from "./update-user-profile";

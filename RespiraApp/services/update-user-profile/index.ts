@@ -31,7 +31,7 @@ export const updateUserProfile = async (
         text: UPDATE_PROFILE_STRINGS.SNACKBAR_MESSAGE,
         duration: Snackbar.LENGTH_SHORT,
         marginBottom: SPACINGS.snackbarMargin,
-        backgroundColor: COLORS.warning,
+        backgroundColor: COLORS.success,
       });
     } else {
       Snackbar.show({

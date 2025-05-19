@@ -1,11 +1,12 @@
 import { useCallback } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
+import { Controller } from "react-hook-form";
+
+import { Button, CommorbiditiesForm, Input } from "@/components";
 
 import { styles } from "./styles";
 import { useUpdateUserProfile } from "./hooks";
 import { PROFILE_PAGE_STRINGS } from "./strings";
-import { Button, Input } from "@/components";
-import { Controller } from "react-hook-form";
 
 export const ProfilePage = () => {
   const {
@@ -14,6 +15,7 @@ export const ProfilePage = () => {
     inputErrors,
     handleSubmit,
     updateUserMutation,
+    commorbidities,
     addCommorbidity,
     removeCommorbidity,
     updateCommorbidity,
@@ -80,16 +82,32 @@ export const ProfilePage = () => {
     }
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{PROFILE_PAGE_STRINGS.TITLE}</Text>
-        {renderBaseDataForm()}
+      <ScrollView
+        style={styles.container}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContentContainer}
+      >
+        <View>
+          <Text style={styles.text}>{PROFILE_PAGE_STRINGS.TITLE}</Text>
+          {renderBaseDataForm()}
+
+          <Text style={styles.textCommorbidity}>
+            {PROFILE_PAGE_STRINGS.COMMORBIDITIES}
+          </Text>
+          <CommorbiditiesForm
+            commorbidities={commorbidities}
+            onAddCommorbidity={addCommorbidity}
+            onRemoveCommorbidity={removeCommorbidity}
+            onUpdateCommorbidity={updateCommorbidity}
+          />
+        </View>
 
         <Button
           title={PROFILE_PAGE_STRINGS.BUTTON_TITLE}
           isLoading={updateUserMutation.isPending}
           onPress={handleSubmit}
         />
-      </View>
+      </ScrollView>
     );
   }, [currentUser, updateUserMutation, renderBaseDataForm, handleSubmit]);
 

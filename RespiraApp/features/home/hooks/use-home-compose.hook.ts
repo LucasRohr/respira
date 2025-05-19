@@ -11,7 +11,7 @@ const DEFAULT_MAP_REGION = Object.freeze({
 });
 
 export const useHomeCompose = () => {
-  const { user, errorUser, isErrorUser, isLoadingUser } = useHomeUser();
+  const { errorUser, isErrorUser, isLoadingUser } = useHomeUser();
 
   const { airQuality, errorQuality, isErrorQuality, isLoadingQuality } =
     useCurrentAirQuality();
@@ -33,7 +33,6 @@ export const useHomeCompose = () => {
   }, [airQuality?.location]);
 
   return {
-    user,
     airQuality,
     airHistory,
     mapRegion,

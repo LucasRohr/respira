@@ -22,6 +22,7 @@ const buildOptimisticUser = (
 
 export const useUpdateUserProfile = () => {
   const currentUser = useUserStore((state) => state.user);
+  const setLoggedUser = useUserStore((state) => state.setLoggedUser);
 
   const [commorbidities, setCommorbidities] = useState<ICommorbidity[]>(
     currentUser?.commorbidities ?? []
@@ -63,6 +64,9 @@ export const useUpdateUserProfile = () => {
     onError: (err, newProfileData, context) => {
       queryClient.setQueryData([QUERY_KEYS.GET_USER], context?.previousUser);
     },
+    onSuccess: (_, newData) => {
+      setLoggedUser(buildOptimisticUser(newData, currentUser));
+    },
     // Always refetch after error or success:
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.GET_USER] });
@@ -103,6 +107,7 @@ export const useUpdateUserProfile = () => {
     currentUser,
     inputController: control,
     inputErrors: errors,
+    commorbidities,
     addCommorbidity,
     removeCommorbidity,
     updateCommorbidity,

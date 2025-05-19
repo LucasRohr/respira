@@ -2,13 +2,12 @@ import { useCallback } from "react";
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { TextInput } from "react-native-paper";
 
-import { Input, LocationAirQualityCard } from "@/components";
+import { EmptyListResult, Input, LocationAirQualityCard } from "@/components";
 import { COLORS } from "@/constants";
 
 import { styles } from "./styles";
 import { SEARCH_PAGE_STRINGS } from "./strings";
 import { useSearchLocation } from "./hooks";
-import { EmptySearchResult } from "./components";
 
 export const SearchPage = () => {
   const { searchText, handleSearch, searchResult, isLoading, isError, error } =
@@ -20,7 +19,7 @@ export const SearchPage = () => {
     }
 
     if (!searchResult.locationsReports.length) {
-      return <EmptySearchResult />;
+      return <EmptyListResult />;
     }
 
     return (

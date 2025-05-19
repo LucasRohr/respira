@@ -4,15 +4,36 @@ import MapView, { Marker } from "react-native-maps";
 import PagerView from "react-native-pager-view";
 
 import { COLORS } from "@/constants";
+import { useUpdateFavoriteLocation } from "@/hooks";
+import { AirHistoryCard } from "@/components";
 
 import { styles } from "./styles";
 import { useHomeCompose } from "./hooks";
 import { HomeAirQualityCard, HomeRecommendations } from "./components";
-import { AirHistoryCard } from "@/components";
 
 export const HomePage = () => {
   const { user, airHistory, airQuality, mapRegion, isLoading, isError, error } =
     useHomeCompose();
+
+  const { currentIsFavorite, addFavoriteMutation, removeFavoriteMutation } =
+    useUpdateFavoriteLocation({
+      defaultIsFavorite: airQuality?.isFavorite ?? false,
+    });
+
+  const onPressFavorite = useCallback(() => {
+    const locationId = airQuality?.location?.id ?? 0;
+
+    if (currentIsFavorite) {
+      removeFavoriteMutation.mutate(locationId);
+    } else {
+      addFavoriteMutation.mutate(locationId);
+    }
+  }, [
+    airQuality?.location?.id,
+    currentIsFavorite,
+    addFavoriteMutation,
+    removeFavoriteMutation,
+  ]);
 
   const renderMap = useCallback(() => {
     return (
@@ -40,7 +61,8 @@ export const HomePage = () => {
             city={airQuality?.location.city ?? ""}
             state={airQuality?.location.state ?? ""}
             pollutants={airQuality?.airQualityReport.pollutants ?? []}
-            isFavorite={false}
+            isFavorite={currentIsFavorite}
+            onPressFavorite={onPressFavorite}
           />
           {airHistory.reports.map((item, index) => (
             <AirHistoryCard
@@ -53,7 +75,7 @@ export const HomePage = () => {
         </PagerView>
       </View>
     );
-  }, [airQuality, airHistory]);
+  }, [airQuality, airHistory, currentIsFavorite, onPressFavorite]);
 
   const renderRecommendations = useCallback(() => {
     if (!airQuality) {
@@ -92,7 +114,14 @@ export const HomePage = () => {
         {renderRecommendations()}
       </View>
     );
-  }, [isLoading, isError, error]);
+  }, [
+    isLoading,
+    isError,
+    error,
+    renderAirQualityCarousel,
+    renderMap,
+    renderRecommendations,
+  ]);
 
   return renderContent();
 };

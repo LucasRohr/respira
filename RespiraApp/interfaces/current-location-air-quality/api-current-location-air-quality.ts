@@ -12,4 +12,5 @@ export interface ApiCurrentLocationAirQuality {
   location?: ApiLocation;
   airQualityReport?: ApiAirQualityReport;
   recommendations?: string[];
+  isFavorite?: boolean;
 }

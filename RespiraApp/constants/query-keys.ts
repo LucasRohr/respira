@@ -4,4 +4,5 @@ export const QUERY_KEYS = Object.freeze({
   GET_CURRENT_HISTORY: "get-current-history",
   SEARCH_LOCATIONS: "search-locations",
   GET_LOCATION_DETAILS: "get-location-details",
+  GET_FAVORITE_LOCATIONS: "get-favorite-locations",
 });

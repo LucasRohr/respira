@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import type { HomeAirQualityCardProps } from "./types";
@@ -12,6 +12,7 @@ export const HomeAirQualityCard = ({
   state,
   pollutants,
   isFavorite,
+  onPressFavorite,
 }: HomeAirQualityCardProps) => {
   const renderPollutants = useCallback(() => {
     return pollutants.map(({ name, concentration, severity }, index) => {
@@ -35,11 +36,13 @@ export const HomeAirQualityCard = ({
           {city}, {state}
         </Text>
 
-        <Ionicons
-          name={isFavorite ? "star" : "star-outline"}
-          color={COLORS.primary}
-          size={24}
-        />
+        <TouchableOpacity onPress={onPressFavorite}>
+          <Ionicons
+            name={isFavorite ? "star" : "star-outline"}
+            color={COLORS.primary}
+            size={24}
+          />
+        </TouchableOpacity>
       </View>
       <Text style={styles.pollutantsTitle}>
         {HOME_AIR_QUALITY_STRINGS.POLLUTANTS_TITLE}

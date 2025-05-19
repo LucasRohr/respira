@@ -36,7 +36,7 @@ export const ProfilePage = () => {
               placeholder={PROFILE_PAGE_STRINGS.NAME_INPUT_PLACEHOLDER}
               onChange={onChange}
               value={value}
-              error={inputErrors.name?.message}
+              error={inputErrors.name && PROFILE_PAGE_STRINGS.NAME_INPUT_ERROR}
             />
           )}
         />
@@ -52,7 +52,9 @@ export const ProfilePage = () => {
               placeholder={PROFILE_PAGE_STRINGS.EMAIL_INPUT_PLACEHOLDER}
               onChange={onChange}
               value={value}
-              error={inputErrors.email?.message}
+              error={
+                inputErrors.email && PROFILE_PAGE_STRINGS.EMAIL_INPUT_ERROR
+              }
             />
           )}
         />
@@ -66,9 +68,14 @@ export const ProfilePage = () => {
             <Input
               label={PROFILE_PAGE_STRINGS.BIRTHDAY_INPUT_LABEL}
               placeholder={PROFILE_PAGE_STRINGS.BIRTHDAY_INPUT_PLACEHOLDER}
-              onChange={onChange}
               value={value}
-              error={inputErrors.birthDate && "aaa"}
+              keyboardType="number-pad"
+              maxLength={10}
+              error={
+                inputErrors.birthDate &&
+                PROFILE_PAGE_STRINGS.BIRTHDAY_INPUT_ERROR
+              }
+              onChange={onChange}
             />
           )}
         />

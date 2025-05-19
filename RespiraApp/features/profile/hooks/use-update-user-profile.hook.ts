@@ -97,10 +97,16 @@ export const useUpdateUserProfile = () => {
   };
 
   const onSubmit = (data: Omit<IUpdateUserProfile, "commorbidities">) => {
-    updateUserMutation.mutate({
-      ...data,
-      commorbidities,
-    });
+    const { name, email, birthDate } = data;
+
+    const hasValidData = name && email && birthDate && commorbidities.length;
+
+    if (hasValidData) {
+      updateUserMutation.mutate({
+        ...data,
+        commorbidities,
+      });
+    }
   };
 
   return {

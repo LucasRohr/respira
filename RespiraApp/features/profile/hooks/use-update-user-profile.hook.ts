@@ -106,6 +106,7 @@ export const useUpdateUserProfile = () => {
     addCommorbidity,
     removeCommorbidity,
     updateCommorbidity,
-    handleSubmit: () => handleSubmit(onSubmit),
+    handleSubmit: handleSubmit(onSubmit),
+    updateUserMutation,
   };
 };

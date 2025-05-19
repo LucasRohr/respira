@@ -12,7 +12,7 @@ export const updateUserProfile = async (
 ): Promise<boolean> => {
   try {
     // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // const response = await axiosInstance.put<void>(
     //   "/profile",

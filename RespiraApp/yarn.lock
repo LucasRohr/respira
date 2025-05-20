@@ -5066,6 +5066,11 @@ react-freeze@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.4.tgz#cbbea2762b0368b05cbe407ddc9d518c57c6f3ad"
   integrity sha512-r4F0Sec0BLxWicc7HEyo2x3/2icUTrRmDjaaRyzzn+7aDyFZliszMDOgLVwSnQnYENOlL1o569Ze2HZefk8clA==
 
+react-hook-form@^7.56.4:
+  version "7.56.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.56.4.tgz#273f55d43fb24ace3e2b9409d0d5326306d7905e"
+  integrity sha512-Rob7Ftz2vyZ/ZGsQZPaRdIefkgOSrQSPXfqBdvOPwJfoGnjwRJUs7EM7Kc1mcoDv3NOtqBzPGbcMB8CGn9CKgw==
+
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^18.0.0, react-is@^18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.3.1.tgz#e83557dc12eae63a99e003a46388b1dcbb44db7e"
@@ -5111,6 +5116,22 @@ react-native-pager-view@6.7.1:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.7.1.tgz#60d52dedbcc92ee7037a13287ebeed5f74e49df7"
   integrity sha512-cBSr6xw4g5N7Kd3VGWcf+kmaH7iBWb0DXAf2bVo3bXkzBcBbTOmYSvc0LVLHhUPW8nEq5WjT9LCIYAzgF++EXw==
+
+react-native-paper-dropdown@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-paper-dropdown/-/react-native-paper-dropdown-2.3.1.tgz#02220c29ed8f326624be91e25bfbbbe676c66321"
+  integrity sha512-IvcHTucAV5+fiX2IVMiVdBDKT6KHxycW0o9QzZe7bpmeZWmuCajHDnwG3OSBGlXhUxrrM3TC0/HJZHwORWGgQg==
+  dependencies:
+    react-native-paper "^5.12.3"
+
+react-native-paper@^5.12.3:
+  version "5.14.4"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.14.4.tgz#8ff978d1aebd6388c752287d557a5f8cb3716fe5"
+  integrity sha512-XtL9ilZGNZfGopt469vNCYqePNvHrZ1v6if0EXIQfXUx0vZ+lY0Cq7wi0Ap4CBxJTPbj71A1BcRyZDu6ogJKpg==
+  dependencies:
+    "@callstack/react-theme-provider" "^3.0.9"
+    color "^3.1.2"
+    use-latest-callback "^0.2.3"
 
 react-native-paper@^5.13.5:
   version "5.14.1"

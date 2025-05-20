@@ -33,3 +33,8 @@ export { IFavoriteLocationsList } from "./favorite-locations-list/favorite-locat
 
 export { IAddFavoriteLocation } from "./add-favorite-location/add-favorite-location";
 export { IRemoveFavoriteLocation } from "./remove-favorite-location/remove-favorite-location";
+
+export { ApiCommorbidity } from "./commorbidity/api-commorbidity";
+export { ICommorbidity } from "./commorbidity/commorbidity";
+
+export { IUpdateUserProfile } from "./update-user-profile/update-user-profile";

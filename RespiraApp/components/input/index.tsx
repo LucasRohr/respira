@@ -2,9 +2,10 @@ import { useCallback, useMemo } from "react";
 import { Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
 
+import { COLORS } from "@/constants";
+
 import { styles } from "./styles";
 import type { InputPropsType } from "./types";
-import { COLORS } from "@/constants";
 
 export const Input = ({
   value,
@@ -14,6 +15,8 @@ export const Input = ({
   isEditable = true,
   isDisabled = false,
   autoCapitalize = "none",
+  keyboardType,
+  maxLength,
   error,
   rightIcon,
 }: InputPropsType) => {
@@ -38,6 +41,7 @@ export const Input = ({
         error={!!error}
         right={rightIcon}
         mode="outlined"
+        maxLength={maxLength}
         outlineColor={COLORS.primaryLight}
         cursorColor={COLORS.primaryLight}
         textColor={COLORS.text}
@@ -46,6 +50,7 @@ export const Input = ({
         style={styles.input}
         placeholder={placeholder}
         autoCapitalize={autoCapitalize}
+        keyboardType={keyboardType}
         onChangeText={onChange}
       />
       {renderError()}

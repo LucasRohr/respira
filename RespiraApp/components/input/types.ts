@@ -1,4 +1,4 @@
-import { NativeSyntheticEvent, TextInputChangeEventData } from "react-native";
+import type { KeyboardTypeOptions } from "react-native";
 
 export type InputPropsType = {
   value: string;
@@ -7,7 +7,9 @@ export type InputPropsType = {
   onChange: (text: string) => void;
   isEditable?: boolean;
   isDisabled?: boolean;
+  maxLength?: number;
   autoCapitalize?: "none" | "sentences" | "words" | "characters" | undefined;
+  keyboardType?: KeyboardTypeOptions;
   error?: string | undefined | null;
   rightIcon?: React.ReactNode;
 };

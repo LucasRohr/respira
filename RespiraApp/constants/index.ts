@@ -7,3 +7,4 @@ export { AIR_QUALITY_STATUS } from "./air-quality-status";
 export { POLLUTANT_STATUS } from "./pollutant-status";
 export { STATUS_CODES } from "./status-codes";
 export { queryClient } from "./query-client";
+export { COMMORBIDITY_SEVERITY } from "./commorbidity-severity";

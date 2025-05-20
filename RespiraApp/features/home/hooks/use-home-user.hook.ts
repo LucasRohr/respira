@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@/constants";
 import { getUser } from "@/services";
 import { useUserStore } from "@/store";
+import { useEffect } from "react";
 
 // This hook will be moved to the login feature
 export const useHomeUser = () => {
@@ -13,12 +14,13 @@ export const useHomeUser = () => {
 
   const setLoggedUser = useUserStore((state) => state.setLoggedUser);
 
-  if (data && isSuccess) {
-    setLoggedUser(data);
-  }
+  useEffect(() => {
+    if (data && isSuccess) {
+      setLoggedUser(data);
+    }
+  }, [data, isSuccess, setLoggedUser]);
 
   return {
-    user: data,
     isLoadingUser: isLoading,
     errorUser: error,
     isErrorUser: isError,

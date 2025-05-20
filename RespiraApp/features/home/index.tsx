@@ -12,7 +12,7 @@ import { useHomeCompose } from "./hooks";
 import { HomeAirQualityCard, HomeRecommendations } from "./components";
 
 export const HomePage = () => {
-  const { user, airHistory, airQuality, mapRegion, isLoading, isError, error } =
+  const { airHistory, airQuality, mapRegion, isLoading, isError, error } =
     useHomeCompose();
 
   const { currentIsFavorite, addFavoriteMutation, removeFavoriteMutation } =

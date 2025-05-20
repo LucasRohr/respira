@@ -1,3 +1,5 @@
+import type { ApiCommorbidity } from "../commorbidity/api-commorbidity";
+
 export interface ApiUser {
   id?: number;
   name?: string;
@@ -5,4 +7,5 @@ export interface ApiUser {
   birthDate?: string;
   token?: string;
   fcmToken?: string;
+  commorbidities?: ApiCommorbidity[];
 }

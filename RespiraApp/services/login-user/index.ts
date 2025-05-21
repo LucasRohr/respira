@@ -2,9 +2,8 @@ import Snackbar from "react-native-snackbar";
 
 import type { ApiUser, ILoginUser, IUser } from "@/interfaces";
 import { userFactory } from "@/factories";
-import { COLORS, SPACINGS, STATUS_CODES } from "@/constants";
+import { COLORS, STATUS_CODES } from "@/constants";
 
-// import { axiosInstance } from "../axios-config";
 import { LOGIN_USER_STRINGS } from "./strings";
 import mockData from "./mock-data.json";
 
@@ -23,7 +22,7 @@ export const loginUser = async (loginBody: ILoginUser): Promise<IUser> => {
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // const response = await axiosInstance.post<ApiUser>("/login", JSON.stringify(loginBody));
+    // const response = await useRequest().post<ApiUser>("/login", JSON.stringify(loginBody));
 
     const mockUserData: ApiUser = mockData;
 

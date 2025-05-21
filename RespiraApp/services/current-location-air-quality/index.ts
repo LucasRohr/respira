@@ -6,8 +6,6 @@ import { currentLocationAirQualityFactory } from "@/factories";
 
 import mockData from "./mock-data.json";
 
-//import { axiosInstance } from "../axios-config";
-
 // Using mocked data due to the fact that the API is not available yet
 export const getCurrentLocationAirQuality =
   async (): Promise<ICurrentLocationAirQuality> => {
@@ -17,7 +15,7 @@ export const getCurrentLocationAirQuality =
       // Simulate API delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // const response = await axiosInstance.get<ApiCurrentLocationAirQuality>(
+      // const response = await useRequest().get<ApiCurrentLocationAirQuality>(
       //   "/current-location-air-quality",
       //   {
       //     params: {

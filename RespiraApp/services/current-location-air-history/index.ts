@@ -6,8 +6,6 @@ import { currentLocationAirHistoryFactory } from "@/factories";
 
 import mockData from "./mock-data.json";
 
-//import { axiosInstance } from "../axios-config";
-
 // Using mocked data due to the fact that the API is not available yet
 export const getCurrentLocationAirHistory = async (
   locationId: number
@@ -16,7 +14,7 @@ export const getCurrentLocationAirHistory = async (
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // const response = await axiosInstance.get<ApiCurrentLocationAirHistory>(
+    // const response = await useRequest().get<ApiCurrentLocationAirHistory>(
     //   "/current-location-air-history",
     //   {
     //     params: {

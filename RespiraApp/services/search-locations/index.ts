@@ -6,7 +6,7 @@ import { searchLocationResultFactory } from "@/factories";
 
 import mockData from "./mock-data.json";
 
-//import { axiosInstance } from "../axios-config";
+// import { useRequest } from "@/hooks";
 
 // Using mocked data due to the fact that the API is not available yet
 export const getSearchLocations = async (
@@ -16,7 +16,7 @@ export const getSearchLocations = async (
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // const response = await axiosInstance.get<ApiSearchLocationResult>(
+    // const response = await useRequest().get<ApiSearchLocationResult>(
     //   "/search-locations",
     //   {
     //     params: {

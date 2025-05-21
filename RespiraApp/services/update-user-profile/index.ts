@@ -5,8 +5,6 @@ import { COLORS, SPACINGS, STATUS_CODES } from "@/constants";
 
 import { UPDATE_PROFILE_STRINGS } from "./strings";
 
-// import { axiosInstance } from "../axios-config";
-
 export const updateUserProfile = async (
   updateUserProfileBody: IUpdateUserProfile
 ): Promise<boolean> => {
@@ -14,7 +12,7 @@ export const updateUserProfile = async (
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // const response = await axiosInstance.put<void>(
+    // const response = await useRequest().put<void>(
     //   "/profile",
     //   JSON.stringify(updateUserProfileBody)
     // );

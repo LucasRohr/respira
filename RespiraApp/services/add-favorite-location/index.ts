@@ -5,8 +5,6 @@ import { COLORS, SPACINGS, STATUS_CODES } from "@/constants";
 
 import { ADD_FAVORITE_LOCATION_STRINGS } from "./strings";
 
-// import { axiosInstance } from "../axios-config";
-
 export const addFavoriteLocation = async (
   addFavoriteLocationBody: IAddFavoriteLocation
 ): Promise<boolean> => {
@@ -14,7 +12,7 @@ export const addFavoriteLocation = async (
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // const response = await axiosInstance.post<void>(
+    // const response = await useRequest().post<void>(
     //   "/add-favorite-location",
     //   JSON.stringify(addFavoriteLocationBody)
     // );

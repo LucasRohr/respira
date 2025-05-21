@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { useRouter } from "expo-router";
 
 import type { ICommorbidity, IUpdateUserProfile, IUser } from "@/interfaces";
 import { QUERY_KEYS, queryClient } from "@/constants";
@@ -23,6 +24,9 @@ const buildOptimisticUser = (
 export const useUpdateUserProfile = () => {
   const currentUser = useUserStore((state) => state.user);
   const setLoggedUser = useUserStore((state) => state.setLoggedUser);
+  const removeLoggedUSer = useUserStore((state) => state.removeLoggedUSer);
+
+  const router = useRouter();
 
   const [commorbidities, setCommorbidities] = useState<ICommorbidity[]>(
     currentUser?.commorbidities ?? []
@@ -72,6 +76,11 @@ export const useUpdateUserProfile = () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.GET_USER] });
     },
   });
+
+  const logoffUser = () => {
+    removeLoggedUSer();
+    router.dismissAll();
+  };
 
   const addCommorbidity = () => {
     setCommorbidities((prevList) => [
@@ -124,6 +133,7 @@ export const useUpdateUserProfile = () => {
     removeCommorbidity,
     updateCommorbidity,
     handleSubmit: handleSubmit(onSubmit),
+    logoffUser,
     updateUserMutation,
   };
 };

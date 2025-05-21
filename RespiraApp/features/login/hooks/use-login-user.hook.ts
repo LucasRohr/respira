@@ -27,6 +27,7 @@ export const useLoginUser = () => {
       if (newUser.id) {
         setLoggedUser(newUser);
         router.navigate("/tabs/home");
+        control._reset();
       }
     },
   });

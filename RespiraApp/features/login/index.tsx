@@ -53,7 +53,7 @@ export const LoginPage = () => {
         />
       </View>
     );
-  }, []);
+  }, [inputController, inputErrors]);
 
   return (
     <View style={styles.container}>

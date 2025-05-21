@@ -24,8 +24,10 @@ export const useLoginUser = () => {
   const loginUserMutation = useMutation({
     mutationFn: (loginData: ILoginUser) => loginUser(loginData),
     onSuccess: (newUser) => {
-      setLoggedUser(newUser);
-      router.navigate("/tabs/home");
+      if (newUser.id) {
+        setLoggedUser(newUser);
+        router.navigate("/tabs/home");
+      }
     },
   });
 

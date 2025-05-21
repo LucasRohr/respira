@@ -8,6 +8,16 @@ import { COLORS, SPACINGS, STATUS_CODES } from "@/constants";
 import { LOGIN_USER_STRINGS } from "./strings";
 import mockData from "./mock-data.json";
 
+const buildEmptyUser = (): IUser => ({
+  id: 0,
+  name: "",
+  email: "",
+  birthDate: "",
+  token: "",
+  fcmToken: "",
+  commorbidities: [],
+});
+
 export const loginUser = async (loginBody: ILoginUser): Promise<IUser> => {
   try {
     // Simulate API delay
@@ -29,9 +39,10 @@ export const loginUser = async (loginBody: ILoginUser): Promise<IUser> => {
       Snackbar.show({
         text: LOGIN_USER_STRINGS.SNACKBAR_ERROR,
         duration: Snackbar.LENGTH_SHORT,
-        marginBottom: SPACINGS.snackbarMargin,
         backgroundColor: COLORS.error,
       });
+
+      return buildEmptyUser();
     }
 
     const parsedResponse = userFactory(response.data);

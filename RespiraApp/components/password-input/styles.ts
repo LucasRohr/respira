@@ -6,8 +6,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     marginBottom: 16,
     position: "relative",
-    flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   inputContainer: {
     flex: 1,

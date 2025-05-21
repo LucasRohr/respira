@@ -40,3 +40,5 @@ export { ICommorbidity } from "./commorbidity/commorbidity";
 export { IUpdateUserProfile } from "./update-user-profile/update-user-profile";
 
 export { ILoginUser } from "./login-user/login-user";
+
+export { IRegisterUser } from "./register-user/register-user";

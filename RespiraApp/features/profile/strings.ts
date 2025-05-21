@@ -15,4 +15,6 @@ export const PROFILE_PAGE_STRINGS = Object.freeze({
 
   COMMORBIDITIES: "Comorbidades",
   BUTTON_TITLE: "Atualizar",
+
+  LOGOFF_TITLE: "Sair",
 });

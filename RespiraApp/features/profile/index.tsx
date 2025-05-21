@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { Controller } from "react-hook-form";
 
 import { Button, CommorbiditiesForm, Input } from "@/components";
@@ -7,6 +7,8 @@ import { Button, CommorbiditiesForm, Input } from "@/components";
 import { styles } from "./styles";
 import { useUpdateUserProfile } from "./hooks";
 import { PROFILE_PAGE_STRINGS } from "./strings";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { COLORS } from "@/constants";
 
 export const ProfilePage = () => {
   const {
@@ -19,6 +21,7 @@ export const ProfilePage = () => {
     addCommorbidity,
     removeCommorbidity,
     updateCommorbidity,
+    logoffUser,
   } = useUpdateUserProfile();
 
   const renderBaseDataForm = useCallback(() => {
@@ -95,7 +98,21 @@ export const ProfilePage = () => {
         contentContainerStyle={styles.scrollContentContainer}
       >
         <View>
-          <Text style={styles.text}>{PROFILE_PAGE_STRINGS.TITLE}</Text>
+          <View style={styles.pageHeader}>
+            <Text style={styles.text}>{PROFILE_PAGE_STRINGS.TITLE}</Text>
+
+            <TouchableOpacity style={styles.logoffButton} onPress={logoffUser}>
+              <Text style={styles.logoffText}>
+                {PROFILE_PAGE_STRINGS.LOGOFF_TITLE}
+              </Text>
+              <Ionicons
+                name="log-out-outline"
+                size={18}
+                color={COLORS.primary}
+              />
+            </TouchableOpacity>
+          </View>
+
           {renderBaseDataForm()}
 
           <Text style={styles.textCommorbidity}>

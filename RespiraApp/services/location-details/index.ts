@@ -3,8 +3,6 @@ import { locationDetailsFactory } from "@/factories";
 
 import mockData from "./mock-data.json";
 
-//import { axiosInstance } from "../axios-config";
-
 // Using mocked data due to the fact that the API is not available yet
 export const getLocationDetails = async (
   locationId: number
@@ -13,7 +11,7 @@ export const getLocationDetails = async (
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // const response = await axiosInstance.get<ApiLocationDetails>(
+    // const response = await useRequest().get<ApiLocationDetails>(
     //   "/location-details",
     //   {
     //     params: {

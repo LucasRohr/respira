@@ -4,4 +4,5 @@ export const FONT_SIZES = Object.freeze({
   intermediate: 16,
   big: 20,
   extraBig: 24,
+  ultraBig: 32,
 });

@@ -1,4 +1,4 @@
-export { axiosInstance, getJWTHeader } from "./axios-config";
+export { axiosInstance } from "./axios-config";
 export { getUser } from "./user";
 export { getCurrentLocationAirQuality } from "./current-location-air-quality";
 export { getCurrentLocationAirHistory } from "./current-location-air-history";
@@ -8,3 +8,4 @@ export { getFavoriteLocations } from "./get-favorite-locations";
 export { addFavoriteLocation } from "./add-favorite-location";
 export { removeFavoriteLocation } from "./remove-favorite-location";
 export { updateUserProfile } from "./update-user-profile";
+export { loginUser } from "./login-user";

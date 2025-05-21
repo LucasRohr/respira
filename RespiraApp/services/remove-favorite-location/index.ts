@@ -5,8 +5,6 @@ import { COLORS, SPACINGS, STATUS_CODES } from "@/constants";
 
 import { REMOVE_FAVORITE_LOCATION_STRINGS } from "./strings";
 
-// import { axiosInstance } from "../axios-config";
-
 export const removeFavoriteLocation = async (
   removeFavoriteLocationBody: IRemoveFavoriteLocation
 ): Promise<boolean> => {
@@ -14,7 +12,7 @@ export const removeFavoriteLocation = async (
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // const response = await axiosInstance.put<void>(
+    // const response = await useRequest().put<void>(
     //   "/remove-favorite-location",
     //   JSON.stringify(removeFavoriteLocationBody)
     // );

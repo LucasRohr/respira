@@ -5,6 +5,7 @@ import { ApiUser, IRegisterUser, IUser } from "@/interfaces";
 import { userFactory } from "@/factories";
 
 import { REGISTER_USER_STRINGS } from "./strings";
+import mockData from "./mock-data.json";
 
 const buildEmptyUser = (): IUser => ({
   id: 0,

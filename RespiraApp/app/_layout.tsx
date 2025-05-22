@@ -25,6 +25,13 @@ export default function RootLayout() {
                 headerTitle: "Detalhes",
               }}
             />
+            <Stack.Screen
+              name="register"
+              options={{
+                headerTitle: "",
+                headerBackTitle: "Login",
+              }}
+            />
           </Stack>
         </PaperProvider>
       </QueryClientProvider>

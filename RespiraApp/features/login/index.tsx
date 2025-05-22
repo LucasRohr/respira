@@ -72,7 +72,7 @@ export const LoginPage = () => {
         onPress={handleSubmit}
       />
 
-      <Link style={styles.registerLink} href="/tabs/home">
+      <Link style={styles.registerLink} href="../register">
         {LOGIN_PAGE_STRINGS.REGISTER_LINK_LABEL}
       </Link>
     </View>

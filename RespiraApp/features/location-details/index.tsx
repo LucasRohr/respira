@@ -2,14 +2,14 @@ import { useCallback } from "react";
 import { ActivityIndicator, FlatList, Text, View } from "react-native";
 
 import { COLORS } from "@/constants";
+import { useUpdateFavoriteLocation } from "@/hooks";
+import { AirHistoryCard } from "@/components";
 
 import type { LocationDetailsPageProps } from "./types";
 import { useLocationDetails } from "./hooks";
 import { styles } from "./styles";
-import { AirHistoryCard } from "@/components";
 import { LocationDetailsAirQualityCard, LocationHeader } from "./components";
 import { LOCATION_DETAILS_STRINGS } from "./strings";
-import { useUpdateFavoriteLocation } from "@/hooks";
 
 export const LocationDetailsPage = ({
   locationId,

@@ -12,6 +12,7 @@ import { useUpdateFavoriteLocation } from "@/hooks";
 
 export const LocationAirQualityCard = ({
   id,
+  name,
   city,
   state,
   pollutants,
@@ -59,9 +60,12 @@ export const LocationAirQualityCard = ({
       onPress={navigateToDetails}
     >
       <View style={styles.header}>
-        <Text style={styles.locationTitle}>
-          {city}, {state}
-        </Text>
+        <View style={styles.headerTitleContainer}>
+          <Text style={styles.locationTitle}>{name}</Text>
+          <Text style={styles.locationCityState}>
+            {city}, {state}
+          </Text>
+        </View>
 
         <TouchableOpacity onPress={onPressFavorite}>
           <Ionicons

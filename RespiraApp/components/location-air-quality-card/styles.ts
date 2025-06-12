@@ -15,12 +15,20 @@ export const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
     marginBottom: 8,
+  },
+  headerTitleContainer: {
+    alignItems: "flex-start",
   },
   locationTitle: {
     color: COLORS.primary,
     fontSize: FONT_SIZES.big,
+    marginBottom: 8,
+  },
+  locationCityState: {
+    color: COLORS.primary,
+    fontSize: FONT_SIZES.intermediate,
     marginBottom: 8,
   },
   pollutantsTitle: {

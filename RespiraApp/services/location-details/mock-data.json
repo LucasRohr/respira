@@ -10,7 +10,7 @@
   },
   "airQualityReport": {
     "id": 456,
-    "date": "2025-05-09T12:00:00Z",
+    "date": "2025-06-12T12:00:00Z",
     "generalSeverity": "MEDIA",
     "pollutants": [
       {
@@ -36,7 +36,7 @@
   "airQualityHistory": [
     {
       "id": 456,
-      "date": "2025-05-08T12:00:00Z",
+      "date": "2025-06-11T12:00:00Z",
       "generalSeverity": "MEDIA",
       "pollutants": [
         {
@@ -61,7 +61,7 @@
     },
     {
       "id": 789,
-      "date": "2025-05-07T12:00:00Z",
+      "date": "2025-06-10T12:00:00Z",
       "generalSeverity": "RUIM",
       "pollutants": [
         {
@@ -86,7 +86,7 @@
     },
     {
       "id": 752,
-      "date": "2025-05-06T12:00:00Z",
+      "date": "2025-06-09T12:00:00Z",
       "generalSeverity": "MEDIA",
       "pollutants": [
         {
@@ -106,6 +106,81 @@
           "name": "NO₂",
           "concentration": "15 µg/m³",
           "severity": "BAIXO"
+        }
+      ]
+    },
+    {
+      "id": 753,
+      "date": "2025-06-08T12:00:00Z",
+      "generalSeverity": "BOA",
+      "pollutants": [
+        {
+          "id": 1,
+          "name": "CO₂",
+          "concentration": "40 µg/m³",
+          "severity": "BAIXO"
+        },
+        {
+          "id": 2,
+          "name": "SO₂",
+          "concentration": "35 µg/m³",
+          "severity": "MEDIO"
+        },
+        {
+          "id": 3,
+          "name": "NO₂",
+          "concentration": "15 µg/m³",
+          "severity": "BAIXO"
+        }
+      ]
+    },
+    {
+      "id": 754,
+      "date": "2025-06-07T12:00:00Z",
+      "generalSeverity": "MEDIA",
+      "pollutants": [
+        {
+          "id": 1,
+          "name": "CO₂",
+          "concentration": "40 µg/m³",
+          "severity": "MEDIO"
+        },
+        {
+          "id": 2,
+          "name": "SO₂",
+          "concentration": "40 µg/m³",
+          "severity": "MEDIO"
+        },
+        {
+          "id": 3,
+          "name": "NO₂",
+          "concentration": "25 µg/m³",
+          "severity": "MEDIO"
+        }
+      ]
+    },
+    {
+      "id": 755,
+      "date": "2025-06-06T12:00:00Z",
+      "generalSeverity": "MEDIA",
+      "pollutants": [
+        {
+          "id": 1,
+          "name": "CO₂",
+          "concentration": "40 µg/m³",
+          "severity": "MEDIO"
+        },
+        {
+          "id": 2,
+          "name": "SO₂",
+          "concentration": "10 µg/m³",
+          "severity": "BAIXO"
+        },
+        {
+          "id": 3,
+          "name": "NO₂",
+          "concentration": "25 µg/m³",
+          "severity": "MEDIO"
         }
       ]
     }

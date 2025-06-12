@@ -34,7 +34,8 @@ export const SearchPage = () => {
           return (
             <LocationAirQualityCard
               id={airQualityReport.id}
-              city={location.name}
+              city={location.city}
+              name={location.name}
               state={location.state}
               pollutants={airQualityReport.pollutants}
               isFavorite={isFavorite}

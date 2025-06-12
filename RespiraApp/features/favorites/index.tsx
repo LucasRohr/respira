@@ -40,7 +40,8 @@ export const FavoritesPage = () => {
           return (
             <LocationAirQualityCard
               id={airQualityReport.id}
-              city={location.name}
+              name={location.name}
+              city={location.city}
               state={location.state}
               pollutants={airQualityReport.pollutants}
               isFavorite={true}
